@@ -29,6 +29,16 @@
         <p> Showing results for " param-street " in " param-city ", " param-state " " param-zip "</p>
       </div>")))
 
+; I'm able to get the results of the API request in my browser and Postman,
+; but unfortunately can't determine how to do it in ClojureScript. I think 
+; I would need to install libraries like core.async and cljs-http, but am
+; not sure how to go about that.
+
+; Thank you so much for this opportunity to do a code challenge for Democracy
+; Works! My coding knowledge is currently mostly in JavaScript, and
+; translating what I know in JavaScript into Clojure was fun! I will
+; definitely learn more Clojure in the future.
+
 (defn page [request]
   (html5
    (header request)
