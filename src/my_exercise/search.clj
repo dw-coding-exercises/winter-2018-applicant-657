@@ -19,14 +19,19 @@
   (anti-forgery-field)
 
   ; learned the following from: https://gist.github.com/zehnpaard/665edf183818b4df707b5f0535ecdc0c
-  (let [{:keys [params uri]} request
-        param-name (get params "name")
-        request-type (if (= uri "/get-submit") "GET" "POST")]
+  (let [{:keys [params]} request
+        param-street (get params :street)
+        param-street2 (get params :street-2)
+        param-city (get params :city)
+        param-state (get params :state)
+        param-zip (get params :zip)]
     (str
      "<div>
-        <h1>Hello " param-name "!</h1>
-        <p>Submitted via a " request-type " request.</p>
-        <p><a href='..'>Return to main page</p>
+        <p>street = " param-street " </p>
+        <p>street2 = " param-street2 " </p>
+        <p>city = " param-city " </p>
+        <p>state = " param-state " </p>
+        <p>zip= " param-zip " </p>
       </div>")))
 
 (defn page [request]
