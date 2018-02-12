@@ -12,8 +12,7 @@
 
 (defn search-header [request]
   [:div {:class "search-header"}
-   [:h1 "Search results for elections"]
-   [:p "You are in "]])
+   [:h1 "Search results for elections"]])
 
 (defn display-result [request]
   (anti-forgery-field)
@@ -27,11 +26,7 @@
         param-zip (get params :zip)]
     (str
      "<div>
-        <p>street = " param-street " </p>
-        <p>street2 = " param-street2 " </p>
-        <p>city = " param-city " </p>
-        <p>state = " param-state " </p>
-        <p>zip= " param-zip " </p>
+        <p> Showing results for " param-street " in " param-city ", " param-state " " param-zip "</p>
       </div>")))
 
 (defn page [request]
